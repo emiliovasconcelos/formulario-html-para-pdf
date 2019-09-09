@@ -1,0 +1,168 @@
+<!DOCTYPE HTML>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<title>Validação de Formulário</title>
+	<link rel="stylesheet" href="css/estilo.css"/>
+</head>
+<body>
+	<div id="renderPDF">
+		<form class="adesao_form" action="pdf.php" method="post" name="adesao_form">
+			<h3 class="titulo_adesao_form">Requerimento de Adesão ao Plano CD</h3>
+			<fieldset>
+				<legend>Dados Pessoais</legend>
+				<div class="field field-matricula">
+					<label>Matrícula</label>
+					<input value class="iMask" type="text" id="matricula" name="matricula">
+				</div>
+				<div class="field field-nome">
+					<label>Nome</label>
+					<input value class="iMask" type="text" id="nome" name="nome">
+				</div>
+				<div class="field field-nascimento">
+					<label>Nascimento</label>
+					<input value class="iMask" type="date" id="nascimento" name="nascimento">
+				</div>
+				<div class="field field-sexo">
+					<label>sexo</label>
+					<select name="sexo" class="Mask">
+						<option label="Masculino" value="1">Masculino</option>
+						<option label="Feminino" value="2">Feminino</option>
+					</select>
+				</div>
+				<div class="field field-estado-civil">
+					<label>Estado Civil</label>
+					<select name="estado-civil" class="Mask">
+						<option label="Solteiro(a)" value="1">Solteiro(a)</option>
+						<option label="Casado(a)" value="2">Casado(a)</option>
+						<option label="Divorciado(a)" value="3">Divorciado(a)</option>
+						<option label="Viúvo(a)" value="4">Viúvo(a)</option>
+						<option label="Separado(a)" value="5">Separado(a)</option>
+						<option label="Separação Judicial" value="6">Separação Judicial(a)</option>
+						<option label="Outro" value="7">Outro</option>
+					</select>
+				</div>
+				<div class="field field-cpf">
+					<label>CPF (apenas números)</label>
+					<input class="iMask" type="text" id="cpf" name="cpf" OnKeyPress="formatar('###.###.###-##', this)" placeholder="000.000.000-00" maxlength="14">
+				</div>
+				<div class="field field-rg">
+					<label>RG</label>
+					<input class="iMask" type="text" id="rg" name="rg">
+				</div>
+				<div class="field field-rg-orgao">
+					<label>Orgão</label>
+					<input class="iMask" type="text" id="rg-orgao" name="rg-orgao" maxlength="5">
+				</div>
+				<div class="field field-rg-data-emissao">
+					<label>Data de Emissão</label>
+					<input class="iMask" type="date" id="rg-data-emissao" name="rg-data-emissao">
+				</div>
+				<div class="field field-rg-uf-emissao">
+					<label>UF Emissor</label>
+					<input class="iMask" type="text" id="rg-uf-emissao" name="rg-uf-emissao" maxlength="2">
+				</div>
+				<div class="field field-nacionalidade">
+					<label>Nacionalidade</label>
+					<input class="iMask" type="text" id="nacionalidade" name="nacionalidade">
+				</div>
+				<div class="field field-naturalidade">
+					<label>Naturalidade</label>
+					<input class="iMask" type="text" id="nacionalidade" name="nacionalidade">
+				</div>
+				<div class="field field-grau-instrucao">
+					<label>Grau de Instrução</label>
+					<select name="grau-instrucao" class="Mask">
+						<option label="Ensino Fundamental" value="1">Ensino Fundamental</option>
+						<option label="Ensino Médio" value="2">Ensino Médio</option>
+						<option label="Ensino Superior" value="3">Ensino Superior</option>
+						<option label="Pós-Graduação" value="4">Pós-Graduação</option>
+						<option label="Doutorado" value="5">Doutorado</option>
+					</select>
+				</div>
+				<div class="field field-nome-pai">
+					<label>Nome do Pai</label>
+					<input class="iMask" type="text" id="nome-pai" name="nome-pai">
+				</div>
+				<div class="field field-nome-mae">
+					<label>Nome da Mãe</label>
+					<input class="iMask" type="text" id="nome-mae" name="nome-mae">
+				</div>
+				</fieldset>
+			<fieldset>
+				<legend>Endereço</legend>
+				<div class="field field-endereco">
+					<label>Endereço</label>
+					<input value class="iMask" type="text" id="endereco" name="endereco">
+				</div>
+				<div class="field field-endereco-numero">
+					<label>Número</label>
+					<input value class="iMask" type="text" id="endereco-numero" name="endereco-numero">
+				</div>
+				<div class="field field-endereco-complemento">
+					<label>Complemento</label>
+					<input value class="iMask" type="text" id="endereco-complemento" name="endereco-complemento">
+				</div>
+				<div class="field field-endereco-cep">
+					<label>CEP</label>
+					<input value class="iMask" type="text" id="endereco-cep" name="endereco-cep" OnKeyPress="formatar('##.###-###', this)" placeholder="00.000-000" maxlength="10">
+				</div>
+					<div class="field field-endereco-bairro">
+					<label>Bairro</label>
+					<input value class="iMask" type="text" id="endereco-bairro" name="endereco-bairro">
+				</div>
+				<div class="field field-endereco-cidade">
+					<label>Cidade</label>
+					<input value class="iMask" type="text" id="endereco-cidade" name="endereco-cidade">
+				</div>
+				<div class="field field-endereco-uf">
+					<label>UF</label>
+					<input value class="iMask" type="text" id="endereco-uf" name="endereco-uf" maxlength="2">
+				</div>
+			</fieldset>
+			<fieldset>
+				<legend>Contato</legend>
+				<div class="field field-telefone-residencial">
+					<label>Telefone Residencial</label>
+					<input value class="iMask" type="text" id="telefone-residencial" name="telefone-residencial" OnKeyPress="formatar('(99)9999-9999', this)" placeholder="(00)0000-0000" maxlength="12">
+				</div>
+				<div class="field field-telefone-comercial">
+					<label>Telefone Comercial</label>
+					<input value class="iMask" type="text" id="telefone-comercial" name="telefone-comercial" OnKeyPress="formatar('##.####-####', this)" placeholder="(00)0000-0000" maxlength="12">
+				</div>
+				<div class="field field-telefone-celular">
+					<label>Telefone Celular</label>
+					<input value class="iMask" type="text" id="telefone-celular" name="telefone-celular" OnKeyPress="formatar('##.#####-####', this)" placeholder="(00)00000-0000" maxlength="13">
+				</div>
+				<div class="field field-email-pessoal">
+					<label>E-mail Pessoal</label>
+					<input value class="iMask" type="email" id="email-pessoal" name="email-pessoal">
+				</div>
+				<div class="field field-email-profissional">
+					<label>E-mail Profissional</label>
+					<input value class="iMask" type="email" id="email-profissional" name="email-profissional">
+				</div>
+			</fieldset>
+			<fieldset>
+				<legend>Dependentes</legend>
+			</fieldset>
+		</form>
+	</div>
+	<div class="centralizar">
+		<input type="button" value="Finalizar" id="btnImprimir" class="gera-pdf">
+	</div>
+
+	<script language="javascript">
+		function formatar(mascara, documento){
+			let i = documento.value.length;
+			let saida = mascara.substring(0,1);
+			let texto = mascara.substring(i)
+		  
+			if (texto.substring(0,1) != saida){
+				documento.value += texto.substring(0,1);
+			}
+		}
+	</script>
+
+</body>
+</html>
